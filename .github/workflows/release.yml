@@ -53,7 +53,7 @@ jobs:
           cp apps/android-tv/app/build/outputs/apk/debug/app-debug.apk dist/release/XtreamlyTV-AndroidTV-debug.apk
           cd dist/release
           sha256sum * > SHA256SUMS.txt
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: xtreamlytv-release-build-log

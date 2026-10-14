@@ -59,7 +59,7 @@ jobs:
           mkdir -p dist/ci
           cd apps/android-tv
           ./gradlew --no-daemon --stacktrace :app:assembleDebug 2>&1 | tee ../../dist/ci/codeql-android-build.log
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure() && matrix.language == 'java-kotlin'
         with:
           name: xtreamlytv-codeql-android-build-log

@@ -46,13 +46,13 @@ jobs:
           set -o pipefail
           mkdir -p ../../dist/ci
           ./gradlew --no-daemon --stacktrace :app:testDebugUnitTest :app:assembleDebug 2>&1 | tee ../../dist/ci/android-build.log
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: xtreamlytv-android-tv-build-log
           path: dist/ci/android-build.log
           if-no-files-found: ignore
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: success()
         with:
           name: xtreamlytv-android-tv-debug
